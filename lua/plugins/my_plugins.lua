@@ -1,14 +1,13 @@
-
-local plugins ={
---   {
---    "github/copilot.vim",
---    lazy = false,
---    config = function()
---      vim.g.copilot_no_tab_map = true;
---      vim.g.copilot_assume_mapped = true;
---      vim.g.copilot_tab_fallback = "";
---    end
---  },
+local plugins = {
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function()
+      vim.g.copilot_no_tab_map = true
+      vim.g.copilot_assume_mapped = true
+      vim.g.copilot_tab_fallback = ""
+    end,
+  },
   {
     "nvim-neotest/nvim-nio",
   },
@@ -16,8 +15,8 @@ local plugins ={
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require("dap")
-      local dapui = require("dapui")
+      local dap = require "dap"
+      local dapui = require "dapui"
       dapui.setup()
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -28,7 +27,7 @@ local plugins ={
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
       end
-    end
+    end,
   },
   {
     "mfussenegger/nvim-dap",
@@ -48,7 +47,7 @@ local plugins ={
   },
   {
     "nvimtools/none-ls.nvim",
-    ft = {"python"},
+    ft = { "python" },
     opts = function()
       return require "configs.null-ls"
     end,
@@ -57,8 +56,14 @@ local plugins ={
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "black","debugpy","mypy","ruff-lsp","pyright",
-   			"lua-language-server", "stylua",
+        "black",
+        "debugpy",
+        "mypy",
+        "ruff-lsp",
+        "pyright",
+        "isort",
+        "lua-language-server",
+        "stylua",
       },
     },
   },
@@ -70,12 +75,16 @@ local plugins ={
     end,
   },
   {
-  "nvim-treesitter/nvim-treesitter",
-  opts = {
-    ensure_installed = {
-    "vim", "lua", "vimdoc",
-    "python",
-    "html", "css"},
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "python",
+        "html",
+        "css",
+      },
     },
   },
 }
