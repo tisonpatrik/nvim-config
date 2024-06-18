@@ -1,11 +1,9 @@
 local plugins = {
   "stevearc/conform.nvim",
-  event = 'BufWritePre', "BufReadPre",
+  lazy = false,
+  event = 'BufWritePre', "BufReadPre", "BufWritePost",
   config = function()
     require "configs.conform"
   end,
 }
-
-
-
 return plugins
