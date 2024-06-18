@@ -4,7 +4,6 @@ local plugins = {
     opts = {
       ensure_installed = {
         "debugpy",
-        "mypy",
         "ruff",
         "ruff-lsp",
         "pyright",
