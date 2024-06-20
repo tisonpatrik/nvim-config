@@ -10,11 +10,11 @@ map("i", "jk", "<ESC>")
 
 map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Debug Breakpoint" })
 
-map("n", "<leader>dbr", function()
+map("n", "<leader>dpr", function()
   require("dap-python").test_method()
 end, { desc = "Debug Python Run" })
 
-map("i", "<Space>i", function()
+map("i", "<leader>i", function()
   return vim.fn["copilot#Accept"] "<CR>"
 end, {
   expr = true,
