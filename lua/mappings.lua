@@ -8,9 +8,9 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("i", "jk", "<ESC>")
 
-map("n", "<leader>db", "<cmd> DapToggleBreakpoint <CR>", { desc = "Debug Breakpoint" })
+map("n", "<leader>bp", "<cmd> DapToggleBreakpoint <CR>", { desc = "Debug Breakpoint" })
 
-map("n", "<leader>dpr", function()
+map("n", "<leader>dr", function()
   require("dap-python").test_method()
 end, { desc = "Debug Python Run" })
 
